@@ -1,9 +1,16 @@
 package ba.unsa.rs.tutorijal10;
 
-public class Grad {
+import java.io.Serializable;
+
+public class Grad implements Serializable {
     private String cityName;
     private int cityPop;
     private double[] temps = new double[1000];
+    private int j = 0;
+    private static final long serialVersionUID = 1L;
+
+    public Grad(String name, double[] mjerenja, int j) {
+    }
 
     public String getCityName() {
         return cityName;

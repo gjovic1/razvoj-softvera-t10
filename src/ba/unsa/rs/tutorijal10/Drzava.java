@@ -1,11 +1,14 @@
 package ba.unsa.rs.tutorijal10;
 
-public class Drzava {
+import java.io.Serializable;
+
+public class Drzava implements Serializable {
     private String stateName;
     private int statePop;
     private double area;
     private String areaUnit = "km2";
     private Grad capital;
+    private static final long serialVersionUID = 1L;
 
     public String getStateName() {
         return stateName;
