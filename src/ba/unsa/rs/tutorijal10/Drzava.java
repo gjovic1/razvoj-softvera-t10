@@ -6,9 +6,17 @@ public class Drzava implements Serializable {
     private String stateName;
     private int statePop;
     private double area;
-    private String areaUnit = "km2";
+    private String areaUnit;
     private Grad capital;
     private static final long serialVersionUID = 1L;
+
+    public Drzava(String stateName, int statePop, double area, String areaUnit, Grad capital) {
+        this.stateName = stateName;
+        this.statePop = statePop;
+        this.area = area;
+        this.areaUnit = areaUnit;
+        this.capital = capital;
+    }
 
     public String getStateName() {
         return stateName;
@@ -48,5 +56,11 @@ public class Drzava implements Serializable {
 
     public void setCapital(Grad capital) {
         this.capital = capital;
+    }
+
+    @Override
+    public String toString(){
+        return "Drzava {" + "naziv='" + stateName + '\'' + ", statePop='" + statePop + ", area=" + area +
+                ", areaUnit='" + areaUnit + '\'' + ", capital=" + capital + '}';
     }
 }
