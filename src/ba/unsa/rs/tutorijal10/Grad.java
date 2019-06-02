@@ -1,6 +1,7 @@
 package ba.unsa.rs.tutorijal10;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class Grad implements Serializable {
     private String cityName;
@@ -51,4 +52,18 @@ public class Grad implements Serializable {
         if(temps!=null)
             System.arraycopy(temps, 0, this.temps,0, j);
     }
+
+    public int getJ() {
+        return j;
+    }
+
+    public void setJ(int j) {
+        this.j = j;
+    }
+
+    @Override
+    public String toString(){
+        return "Grad {" + "naziv='" + cityName + '\'' + ", cityPop='" + cityPop + ", temps=" + Arrays.toString(temps) + ", brojMjerenja=" + j + '}';
+    }
 }
+

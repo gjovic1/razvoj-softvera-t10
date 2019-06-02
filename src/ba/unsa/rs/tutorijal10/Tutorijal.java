@@ -7,14 +7,22 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.beans.XMLEncoder;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Tutorijal {
+
+    public static void zapisiXml(UN un){
+        try{
+            XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("un.xml")));
+            encoder.writeObject(un);
+            encoder.close();
+        } catch (Exception exc) {
+            System.out.println("Error: " + exc);
+        }
+    }
 
     public static UN ucitajXml(ArrayList<Grad> gradovi)
     {
@@ -92,7 +100,8 @@ public class Tutorijal {
     }
 
     public static void main(String[] args) throws IOException {
-        //TODO
+        UN un = ucitajXml(null);
+        System.out.println(un);
     }
 
 }
